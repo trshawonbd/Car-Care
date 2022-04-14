@@ -9,7 +9,7 @@ const Services = () => {
 
     return (
         <div>
-            <h2>Services:{services.length}</h2>
+            <h2 className='my-4'>Our Services</h2>
             <div className='row g-4'>
                 
                     {

@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './Service.css'
 
 const Service = ({ service }) => {
 
-    const { name, price, description, img, process } = service;
-    const [showMore, setShowMore] = useState(false)
+    const {id, name, price, description, img, process } = service;
+    const [showMore, setShowMore] = useState(false);
+    const navigate = useNavigate();
+    const handleDetails = (id) =>{
+        navigate(`/service/${id}`)
+        
+    }
 
 
     return (
@@ -27,7 +33,7 @@ const Service = ({ service }) => {
                     </Card.Text>
                     <hr />
                         <div className='d-flex justify-content-around buttons'>
-                            <button className='details-btn'>Details</button>
+                            <button onClick={() => handleDetails(id)} className='details-btn'>Details</button>
                             <button className='book-now-btn'>Book Now</button>
                         </div>
                 </Card.Body>

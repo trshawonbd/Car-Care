@@ -1,0 +1,15 @@
+.card {
+    background-color: black;
+}
+
+.description, .procedure{
+    color: crimson;
+}
+
+.book-btn{
+    border: 2px solid rgba(220, 202, 135, 1);
+    background-color: rgba(220, 202, 135, 1);
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 5px;
+}

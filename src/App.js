@@ -8,21 +8,31 @@ import Contact from './components/Pages/Contact/Contact';
 import NotFound from './components/Shared/NotFound/NotFound';
 import Login from './components/Pages/Login/Login';
 import Register from './components/Pages/Register/Register';
+import ServiceDetails from './components/Pages/Home/Services/ServiceDetails/ServiceDetails';
+import { createContext, useState } from 'react';
+import useServices from './hooks/useServices';
 
+
+export const ServiceContext = createContext();
 function App() {
+  const [services, setServices] = useState([])
+  const value = [services,setServices]
   return (
     <div className="App">
+      <ServiceContext.Provider value={value}>
       <NavBar></NavBar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/services' element={<Services></Services>}></Route>
+        <Route path='/service/:id' element = {<ServiceDetails></ServiceDetails>}></Route>
         <Route path='/about' element={<About></About>}></Route>
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
+      </ServiceContext.Provider>
 
     </div>
   );
