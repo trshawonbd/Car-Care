@@ -1,0 +1,30 @@
+.nav-img img{
+    height: 50px;
+}
+
+Nav .nav-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: Sans;
+    width: 64px;
+    height: 28px;
+}
+
+.link {
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 20px;
+    color: aliceblue;
+    transition: color ease-in-out 300ms;
+  }
+
+.active-link {
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 20px;
+    /* transition: color ease-in-out 300ms; */
+    color: crimson;
+  }
