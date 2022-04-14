@@ -1,0 +1,30 @@
+.card-service{
+    background-color: black;
+    border: 2px solid rgba(220, 202, 135, 1);
+}
+
+.service-name{
+    color: crimson;
+}
+
+ .btn-read-more{
+    margin-left: 10px;
+    padding: 1px;
+    font-size: 12px;
+    background-color: rgba(220, 202, 135, 1) ;
+    color: black;
+    font-weight: 700;
+    padding-left: 5px;
+    padding-right: 5px;
+} 
+
+.btn-read-more:hover{
+    background-color: rgba(220, 202, 135, 1) ;
+    color: black;
+}
+
+.details-btn, .book-now-btn {
+    border: 2px solid rgba(220, 202, 135, 1);
+    background-color: rgba(220, 202, 135, 1);
+    font-weight: 700;
+}

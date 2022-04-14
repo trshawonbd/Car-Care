@@ -12,6 +12,9 @@ Nav .nav-link {
     width: 64px;
     height: 28px;
 }
+.link:hover{
+  color: crimson;
+}
 
 .link {
     text-decoration: none;
@@ -25,6 +28,6 @@ Nav .nav-link {
     text-decoration: none;
     margin-left: 15px;
     font-size: 20px;
-    /* transition: color ease-in-out 300ms; */
+    transition: color ease-in-out 300ms;
     color: crimson;
   }
