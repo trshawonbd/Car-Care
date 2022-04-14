@@ -1,0 +1,81 @@
+[
+    {
+        "id": 1,
+        "name": "ENGINE DIAGNOSTIC",
+        "price": "300",
+        "description": "Many years ago, I had a customer bring in a Pontiac that she stated stalled when coming to a stop. She left the vehicle with us along with the spare keys. We checked the vehicle over and found it had a very rough idle. The tune-up parts were okay, but the carburetor mixture could not be adjusted to clear up the rough idle. We recommended a carburetor overhaul, after which the car drove fine.",
+        "img": "https://i.ibb.co/dGDkr4v/1.jpg",
+        "process": [
+            "1. List the steps of the diagnostic process",
+            "2. List the steps of the diagnostic process",
+            "3. List the steps in most manufacturers diagnostic routines",
+            "4. List the steps of the diagnostic process"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "WHEEL ALIGNMENT",
+        "price": "100",
+        "description": "We had another customer that complained of a noise when driving on the freeway. We drove the car and found no unusual noises. We asked the driver to take us for a ride and found that when the car was driven at approximately 75 mph (15 mph over our speed limit) there was a wind noise that occurred, which turned out to be air crossing over the roof rack. Since we don’t drive vehicles over the speed limit, we were unable to duplicate the noise.",
+        "img": "https://i.ibb.co/tY8dmnP/2.jpg",
+        "process": [
+            "1. List the steps of the diagnostic process",
+            "2. List the steps of the diagnostic process",
+            "3. List the steps in most manufacturers diagnostic routines",
+            "4. List the steps of the diagnostic process"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "OIL CHANGING",
+        "price": "150",
+        "description": "I had a very good diagnostic technician that I relied on to perform most of our emissions and drivability issues. In almost every case, he would diagnose the issue quickly and correctly, but one day he made an error which highlighted some missteps in our diagnostic routine. In short, we did not have a process where every technician used the same steps on every vehicle and followed a set of tests that checked all of the basic mechanical and electrical standards each vehicle must meet.",
+        "img": "https://i.ibb.co/Yh04YVw/3.jpg",
+        "process": [
+            "1. List the steps of the diagnostic process",
+            "2. List the steps of the diagnostic process",
+            "3. List the steps in most manufacturers diagnostic routines",
+            "4. List the steps of the diagnostic process"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "BRAKE REPARING",
+        "price": "180",
+        "description": "My technician made a very common error: he didn’t check the basics at the beginning of his process.  In this case, my technician was tasked with diagnosing a check engine light. This car, a Mustang, had a code for a faulty manifold absolute pressure (MAP) sensor. My technician replaced the sensor, then came to me stating that the new sensor was defective and needed another one. Being as this technician was right much more than he was wrong, we ordered another sensor. When the new sensor came, he installed it then came to me saying the car needed a new powertrain control module (PCM).",
+        "img": "https://i.ibb.co/ZX2Cbkn/4.jpg",
+        "process": [
+            "1. List the steps of the diagnostic process",
+            "2. List the steps of the diagnostic process",
+            "3. List the steps in most manufacturers diagnostic routines",
+            "4. List the steps of the diagnostic process"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "WASH AND GLASSING",
+        "price": "100",
+        "description": "I have since evolved our diagnostic strategy to include a three-stage process. Stage one is a system check, including the basics. Stage two is a little more involved with performing some intrusive tests when necessary, such as compression testing or timing belt alignment. If the diagnosis is not clear after stage one and two, a stage three is required where you would perform specific pier to pier or pinpoint tests from the computer to individual components.",
+        "img": "https://i.ibb.co/FgQ3jXp/5.jpg",
+        "process": [
+            "1. List the steps of the diagnostic process",
+            "2. List the steps of the diagnostic process",
+            "3. List the steps in most manufacturers diagnostic routines",
+            "4. List the steps of the diagnostic process"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "COMPLETE ANALYSIS",
+        "price": "300",
+        "description": "These examples help to explain why a diagnostic process is necessary. In order to implement this process in your shop, first meet with your technicians and ask them how they approach a diagnostic problem. Document these steps, then meet again with your technicians to make sure they are on board with the new, formal process. Once your shop’s technicians are on board, create a worksheet that must be completed as they diagnose vehicles. Documenting the results of their tests will provide you and the customer with information that can be useful in not only diagnosing the issue, but it will help in explaining what is “good” and “bad” with the vehicle.",
+        "img": "https://i.ibb.co/zJy5ZDd/6.jpg",
+
+        "process": [
+            "1. List the steps of the diagnostic process",
+            "2. List the steps of the diagnostic process",
+            "3. List the steps in most manufacturers diagnostic routines",
+            "4. List the steps of the diagnostic process"
+        ]
+    }
+]
