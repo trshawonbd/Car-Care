@@ -31,3 +31,8 @@ Nav .nav-link {
     transition: color ease-in-out 300ms;
     color: crimson;
   }
+
+  .font-icon{
+    color: whitesmoke;
+    
+  }

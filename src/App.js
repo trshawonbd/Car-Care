@@ -11,6 +11,7 @@ import Register from './components/Pages/Register/Register';
 import ServiceDetails from './components/Pages/Home/Services/ServiceDetails/ServiceDetails';
 import { createContext, useState } from 'react';
 import useServices from './hooks/useServices';
+import Cart from './components/Pages/Cart/Cart';
 
 
 export const ServiceContext = createContext();
@@ -30,6 +31,7 @@ function App() {
         <Route path='/contact' element={<Contact></Contact>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/cart' element={<Cart></Cart>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       </ServiceContext.Provider>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import './NavBar.css';
 import logo from '../../../images/logo.png';
 import { Link, NavLink } from 'react-router-dom';
@@ -56,10 +58,17 @@ const NavBar = () => {
                             >
                                 Register
                             </NavLink>
+                            <NavLink
+                                className={({ isActive }) => (isActive ? "active-link" : "link")}
+                                eventKey={2} to='/cart'
+                            >
+                               Cart <span className='font-icon'> <FontAwesomeIcon  icon={faShoppingCart}/></span>  
+                            </NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            
         </div>
     );
 };

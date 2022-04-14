@@ -1,10 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Services from '../Services/Services';
+import Banner from './Banner/Banner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Home = () => {
     return (
         <div>
-            It is home.
+            <Banner></Banner>
+            <Services></Services>
+            
+            
         </div>
     );
 };
