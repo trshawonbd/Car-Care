@@ -7,48 +7,49 @@ import github from '../../../images/social/github.png'
 import auth from '../../../firebase.init';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
-    const [signInWithGoogle, user, loading, error2] = useSignInWithGoogle(auth);
-    const [name, setName] = useState('');
-    let [email, setEmail] = useState('');
-    let [password, setPassword] = useState ('');
-    const [confirm, setconfirm] = useState('');
-    const [agree, setAgree] = useState(false);
-    const [error, setError] = useState('')
-    
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [agree, setAgree] = useState(false)
+
+    const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
-        user1,
-        loading1,
-        error1,
-      ] = useCreateUserWithEmailAndPassword(auth);
-    
-    const navigate = useNavigate();
+        userforEmail,
+        loadingForEmail,
+        errorForEmail,
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
-    const handleRegister = (event) =>{
-        event.preventDefault();
-        email = event.target.email.value;
-        password = event.target.password.value;
 
-        if(password.length < 6){
-            setError("your password must be 6")
-        }
+      let errorElement;
 
-    }
-
-    if (loading) {
+      if (errorForEmail) {
+          return (
+              errorElement = <p className='text-danger'>Error: {errorForEmail?.message} </p>
+          );
+      }
+      if (loadingForEmail) {
         return <p>Loading...</p>;
-    }
-    if (user) {
-        navigate('/home')
-    }
+      }
+      if (userforEmail) {
+          console.log('user:', userforEmail)
+      }
+
+      const handleRegister = (event) =>{
+        event.preventDefault();
+        const name = event.target.name.value;
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        createUserWithEmailAndPassword(email, password)
+      } 
 
     return (
         <div>
             <h2 className='login-title'>Register</h2>
             <div className='w-50 mx-auto'>
-            <Form  onSubmit={handleRegister}>
+            <Form   onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control type="name" placeholder="Enter Your Name" required />
@@ -72,28 +73,27 @@ const Register = () => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control type="password" name='confirmPassword' placeholder="Password" required />
                 </Form.Group>
+
+
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check onClick={() => setAgree(!agree)} type="checkbox" label="Check me out" />
+                    <Form.Check  onClick={() => setAgree(!agree)}  type="checkbox" label="Check me out" />
                 </Form.Group>
+
+
                 <p>Already have you an account? <Link className='login-text' to='/login'>Login</Link> </p>
-                <Button disabled={!agree} className='submit-btn' type="submit">
+                <Button  disabled={!agree}  className='submit-btn' type="submit">
                     Submit
                 </Button>
-                <p style={{color: 'red'}}>{error}</p>
+                {errorElement}
+
+
             </Form>
             <div
              className='hr-dividor'>
                     <hr  />
                 </div>
 
-                <div className='d-flex justify-content-around' >
-                    <div >
-                        <Button className='google-btn' onClick={() => signInWithGoogle()}><img src={google} alt="" srcset="" /> Sign In </Button>
-                    </div>
-                    <div>
-                        <Button className='github-btn'><img src={github} alt="" srcset="" /> Sign In </Button>
-                    </div>
-                </div>
+            <SocialLogin></SocialLogin>
 
             </div>
 

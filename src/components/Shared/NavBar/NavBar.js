@@ -13,7 +13,6 @@ import { signOut } from 'firebase/auth';
 
 
 const NavBar = ({counCartItems}) => {
-    console.log(counCartItems)
     const {services, setServices} = useServices({});
     const [cart, setCart] = ([])
 

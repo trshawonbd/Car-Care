@@ -12,13 +12,13 @@ import ServiceDetails from './components/Pages/Home/Services/ServiceDetails/Serv
 import { createContext, useState } from 'react';
 import useServices from './hooks/useServices';
 import Cart from './components/Pages/Cart/Cart';
+import RequireAuth from './components/Shared/RequireAuth/RequireAuth';
 
 
 export const ServiceContext = createContext();
 function App() {
   const [services, setServices] = useState([])
   const [cart, setCart] = useState([]);
-  console.log(cart);
   const value = { services, setServices, cart, setCart }
 
   const addToCart = (service) => {
@@ -43,12 +43,24 @@ function App() {
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/home' element={<Home addToCart = {addToCart}></Home>}></Route>
           <Route path='/services' element={<Services addToCart = {addToCart}></Services>}></Route>
-          <Route path='/service/:id' element={<ServiceDetails addToCart ={addToCart}></ServiceDetails>}></Route>
+          <Route path='/service/:id' element={
+          <RequireAuth>
+              <ServiceDetails addToCart ={addToCart}></ServiceDetails>
+          </RequireAuth>
+        }
+          
+          ></Route>
           <Route path='/about' element={<About></About>}></Route>
           <Route path='/contact' element={<Contact></Contact>}></Route>
           <Route path='/login' element={<Login></Login>}></Route>
           <Route path='/register' element={<Register></Register>}></Route>
-          <Route path='/cart' element={<Cart addToCart = {addToCart} cart={cart} ></Cart>}></Route>
+          <Route path='/cart' element={
+          <RequireAuth>
+              <Cart addToCart = {addToCart} cart={cart} ></Cart>
+          </RequireAuth>
+          
+          
+          }></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
       </ServiceContext.Provider>
