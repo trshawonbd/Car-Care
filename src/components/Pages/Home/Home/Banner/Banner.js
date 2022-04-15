@@ -6,7 +6,8 @@ import Banner3 from '../../../../../images/banner/banner3.jpg'
 
 const Banner = () => {
     return (
-        <Carousel>
+        <div>
+                    <Carousel>
             <Carousel.Item>
                 <img
                     className="d-block w-100"
@@ -43,6 +44,9 @@ const Banner = () => {
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
+
+        </div>
+
     );
 };
 

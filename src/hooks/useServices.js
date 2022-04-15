@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ServiceContext } from '../App';
 
 const useServices = () => {
-    const [services, setServices] = useContext(ServiceContext);
+    const {services, setServices} = useContext(ServiceContext);
     useEffect(() =>{
         fetch('services.json')
         .then(res => res.json())
@@ -11,7 +11,7 @@ const useServices = () => {
         
         ,[setServices])
 
-        return [services, setServices];
+        return {services, setServices};
 };
 
 export default useServices;

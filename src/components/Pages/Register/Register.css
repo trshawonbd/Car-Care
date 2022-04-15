@@ -1,0 +1,22 @@
+.login-text{
+    text-decoration: none;
+    color: crimson;
+    font-size: large;
+    font-weight: 600;
+}
+
+.submit-btn{
+    border: 2px solid rgba(220, 202, 135, 1);
+    background-color: rgba(220, 202, 135, 1);
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    width: 100px;
+}
+
+.submit-btn:hover{
+    background-color: rgba(220, 202, 135, 1);
+    color: black;
+    border: none;
+}

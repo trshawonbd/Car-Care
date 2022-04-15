@@ -1,0 +1,32 @@
+.login-title{
+    color: crimson;
+    margin-bottom: 10px;
+}
+.hr-dividor hr{
+    border: 5px solid rgba(220, 202, 135, 1);
+    color: rgba(220, 202, 135, 1);
+    height: 5px;
+    margin: 30px;
+    
+}
+
+.google-btn, .github-btn{
+    border: 2px solid rgba(220, 202, 135, 1);
+    background-color: rgba(220, 202, 135, 1);
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    width: 150px;
+}
+
+.google-btn:hover{
+    background-color: rgba(220, 202, 135, 1);
+    color: black;
+    border: none;
+}
+ .github-btn:hover{
+    background-color: rgba(220, 202, 135, 1);
+    color: black;
+    border: none;
+}
