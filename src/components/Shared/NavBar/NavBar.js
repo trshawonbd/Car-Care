@@ -82,7 +82,7 @@ const NavBar = ({counCartItems}) => {
                                 className={({ isActive }) => (isActive ? "active-link" : "link")}
                                 eventKey={2} to='/cart'
                             >
-                               Cart <span className='font-icon'> <FontAwesomeIcon  icon={faShoppingCart}/></span>  
+                               Cart <span className='font-icon'> <FontAwesomeIcon  icon={faShoppingCart}/></span>{counCartItems}  
                             </NavLink>
                         </Nav>
                     </Navbar.Collapse>

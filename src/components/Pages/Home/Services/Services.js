@@ -7,11 +7,12 @@ import './Services.css'
 
 const Services = (props) => {
     const {services, setServices} = useServices({});
-
+    
+    const {addToCart} = props;
 
 /*     console.log(props)
     const {services, setServices} = useServices({});
-    const {addToCart} = props;
+    
     console.log(addToCart) */
  /*    const [cart, setCart] = ([]) */
 
@@ -29,7 +30,8 @@ const Services = (props) => {
                 {
                     services.map((service) => <Service
                         key={service.id}
-                        service={service}                       
+                        service={service} 
+                        addToCart = {addToCart}                      
                     ></Service>
                     )
                 }

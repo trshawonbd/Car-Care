@@ -18,9 +18,11 @@ export const ServiceContext = createContext();
 function App() {
   const [services, setServices] = useState([])
   const [cart, setCart] = useState([]);
+  console.log(cart);
   const value = { services, setServices, cart, setCart }
 
   const addToCart = (service) => {
+    console.log("Hello it's cart")
     const exist = cart.find(s => s.id === service.id)
     if (exist) {
       setCart(cart.map(s => s.id === service.id ? { ...exist, qty: exist.qty + 1 } : s))
@@ -39,7 +41,7 @@ function App() {
         <NavBar counCartItems={cart.length}></NavBar>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
-          <Route path='/home' element={<Home ></Home>}></Route>
+          <Route path='/home' element={<Home addToCart = {addToCart}></Home>}></Route>
           <Route path='/services' element={<Services addToCart = {addToCart}></Services>}></Route>
           <Route path='/service/:id' element={<ServiceDetails addToCart ={addToCart}></ServiceDetails>}></Route>
           <Route path='/about' element={<About></About>}></Route>

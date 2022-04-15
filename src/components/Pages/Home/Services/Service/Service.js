@@ -6,8 +6,8 @@ import './Service.css'
 const Service = (props) => {
     const {service} = props
     const {id, name, price, description, img} = service;
-/*     const {addToCart} = props;
-    console.log(addToCart) */
+    const {addToCart} = props;
+    console.log(props)
     const [showMore, setShowMore] = useState(false);
     
     const navigate = useNavigate();
@@ -37,7 +37,7 @@ const Service = (props) => {
                         <div className='d-flex justify-content-around '>
                             <div className='buttons my'>
                             <button onClick={() => handleDetails(id)} className='details-btn'>Details</button>
-                            <button   /* onClick={() => addToCart(service)} */  className='book-now-btn ms-3'>Book Now</button>
+                            <button    onClick={() => addToCart(service)} className='book-now-btn ms-3'>Book Now</button>
 
                             </div>
 
