@@ -7,7 +7,6 @@ const Service = (props) => {
     const {service} = props
     const {id, name, price, description, img} = service;
     const {addToCart} = props;
-    console.log(props)
     const [showMore, setShowMore] = useState(false);
     
     const navigate = useNavigate();

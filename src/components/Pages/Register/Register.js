@@ -2,48 +2,84 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
-import google from '../../../images/social/google.png'
-import github from '../../../images/social/github.png'
 import auth from '../../../firebase.init';
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 
 const Register = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [agree, setAgree] = useState(false)
+    /* const [agree, setAgree] = useState(false)
 
     const navigate = useNavigate();
     const [
         createUserWithEmailAndPassword,
-        userforEmail,
+        user,
         loadingForEmail,
         errorForEmail,
       ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
 
+      const [updateProfile, updating , error] = useUpdateProfile(auth);
+
 
       let errorElement;
 
-      if (errorForEmail) {
+      if (errorForEmail || error) {
           return (
               errorElement = <p className='text-danger'>Error: {errorForEmail?.message} </p>
           );
       }
-      if (loadingForEmail) {
+      if (loadingForEmail || updating) {
         return <p>Loading...</p>;
       }
-      if (userforEmail) {
-          console.log('user:', userforEmail)
+      if (user) {
+          console.log(user)
+          
       }
 
-      const handleRegister = (event) =>{
+      const handleRegister = async (event) =>{
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
-        createUserWithEmailAndPassword(email, password)
-      } 
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        navigate('/home');
+      }  */
+      const [agree, setAgree] = useState(false);
+      const [
+          createUserWithEmailAndPassword,
+          user,
+          loading,
+          error,
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  
+      const navigate = useNavigate();
+  
+      const navigateLogin = () => {
+          navigate('/login');
+      }
+  
+      if(loading || updating){
+          return <p>...Loading</p>
+      }
+  
+      if (user) {
+       console.log('user', user);  
+      }
+  
+      const handleRegister = async (event) => {
+          event.preventDefault();
+          const name = event.target.name.value;
+          const email = event.target.email.value;
+          const password = event.target.password.value;
+          // const agree = event.target.terms.checked;
+  
+          await createUserWithEmailAndPassword(email, password);
+          await updateProfile({ displayName: name });
+          console.log('Updated profile');
+          navigate('/home');
+      }
 
     return (
         <div>
@@ -52,7 +88,7 @@ const Register = () => {
             <Form   onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
-                    <Form.Control type="name" placeholder="Enter Your Name" required />
+                    <Form.Control type="name" name='name' placeholder="Enter Your Name" required />
                 </Form.Group>
 
 
@@ -80,11 +116,11 @@ const Register = () => {
                 </Form.Group>
 
 
-                <p>Already have you an account? <Link className='login-text' to='/login'>Login</Link> </p>
+                <p>Already have you an account? <Link className='login-text' to='/login' onClick={navigateLogin} >Login</Link> </p>
                 <Button  disabled={!agree}  className='submit-btn' type="submit">
                     Submit
                 </Button>
-                {errorElement}
+                
 
 
             </Form>
