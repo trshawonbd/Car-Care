@@ -4,7 +4,7 @@ import { ServiceContext } from '../App';
 const useServices = () => {
     const {services, setServices} = useContext(ServiceContext);
     useEffect(() =>{
-        fetch('services.json')
+        fetch(process.env.PUBLIC_URL + "/services.json")
         .then(res => res.json())
         .then(data => setServices(data))
     }

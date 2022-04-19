@@ -1,14 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ServiceContext } from '../../../../../App';
+import useServices from '../../../../../hooks/useServices';
 import './ServiceDetails.css'
 
 
 const ServiceDetails = () => {
+
     const para = useParams();
     const { id } = para;
-    const { services, setServices } = useContext(ServiceContext);
-    const service = services.find((service) => service.id == id);
+    const {services, setServices} = useServices();
+    const [service, setService] = useState({})
+    useEffect(()=>{
+        const service = services.find((service) => service.id == id);
+        setService(service)
+    },[id, services])
+    
+    console.log(service, services)
+    if(!service){
+        return `nothing found`
+    }
     const { name, price, description, process, img } = service;
 
 
